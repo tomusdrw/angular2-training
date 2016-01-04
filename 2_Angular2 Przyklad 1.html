@@ -1,0 +1,81 @@
+<html xp-run-server-url="http://xpla.org"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Angular2 Przyklad 1</title>
+    <link type="text/css" rel="stylesheet" media="all" href="http://xpla.org/static/css/slide.3.0.0.css">
+  </head>
+  <body class="xp-slide" xp-slide="http://localhost:8080/1_intro.html">
+    <div class="xp-column" style="width:50%">
+      <xp-editor><script id="index.html" type="application/octetstream">
+<html>
+  <head>
+    <title>Angular 2 QuickStart</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.18.4/system.js"><+/script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/2.0.0-beta.0/angular2.js"><+/script>
+    <script>
+      System.config({
+        transpiler: null
+      });
+      System.import('./app.js');
+    <+/script>
+  </head>
+  <body>
+    <my-app>loading...</my-app>
+  <!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function() {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					head.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					head.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function(msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			console.log('Live reload enabled.');
+		})();
+	}
+	// ]]>
+<+/script>
+</body>
+</html>
+
+</script>
+<script id="app.ts" type="application/octetstream">
+import {Component} from 'angular2/core';
+import {bootstrap} from 'angular2/bootstrap';
+
+@Component({
+    selector: 'my-app',
+    template: '<h1>{{ hello }}</h1>'
+})
+class AppComponent { 
+    public hello:string = 'Hello, world!';
+}
+
+bootstrap(AppComponent);
+
+</script></xp-editor>
+    </div>
+    <div class="xp-column" style="width:50%">
+      <xp-preview runner="html-ts"></xp-preview>
+    </div>
+    <script src="http://xpla.org/static/js/slide.3.0.0.js"></script>
+  
+
+</body></html>
