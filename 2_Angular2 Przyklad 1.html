@@ -10,55 +10,23 @@
 <html>
   <head>
     <title>Angular 2 QuickStart</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.18.4/system.js"><+/script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/2.0.0-beta.0/angular2.js"><+/script>
+    <script src="/cdn/systemjs/0.19.9/dist/system.js"><+/script>
+    <script src="/cdn/angular.js/2.0.0-beta.0/angular2-polyfills.js"><+/script>
+    <script src="/cdn/angular.js/2.0.0-beta.0/Rx.js"><+/script>
+    <script src="/cdn/angular.js/2.0.0-beta.0/angular2.dev.js"><+/script>
     <script>
-      System.config({
-        transpiler: null
-      });
       System.import('./app.js');
     <+/script>
   </head>
   <body>
     <my-app>loading...</my-app>
-  <!-- Code injected by live-server -->
-<script type="text/javascript">
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function() {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					head.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					head.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function(msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			console.log('Live reload enabled.');
-		})();
-	}
-	// ]]>
-<+/script>
 </body>
 </html>
 
 </script>
 <script id="app.ts" type="application/octetstream">
 import {Component} from 'angular2/core';
-import {bootstrap} from 'angular2/bootstrap';
+import {bootstrap} from 'angular2/platform/browser';
 
 @Component({
     selector: 'my-app',
